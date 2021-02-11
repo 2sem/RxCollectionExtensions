@@ -1,0 +1,6 @@
+use_frameworks!
+target 'RxCollectionExtensions_Tests' do
+  pod 'RxCollectionExtensions', :path => '../'
+  
+  
+end
