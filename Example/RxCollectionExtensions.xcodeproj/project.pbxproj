@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CB2449925D571DC0069B7BD /* Rx+CollectionObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2449825D571DC0069B7BD /* Rx+CollectionObservable.swift */; };
+		2CD6EC9625D76849005049C7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2CD6EC9525D76849005049C7 /* .gitignore */; };
 		3184DE0EE4EBA95164633051 /* Pods_RxCollectionExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B783DD5F05E4B3C7CAB5004 /* Pods_RxCollectionExtensions_Tests.framework */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A49A525E9B5E648F59642E9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1A49A525E9B5E648F59642E9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		20036C11D4F00D71B2DB4D6F /* Pods-RxCollectionExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCollectionExtensions_Tests.release.xcconfig"; path = "Target Support Files/Pods-RxCollectionExtensions_Tests/Pods-RxCollectionExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4A872CB35228DBFFCAAD4ED7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2CB2449825D571DC0069B7BD /* Rx+CollectionObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+CollectionObservable.swift"; sourceTree = "<group>"; };
+		2CD6EC9525D76849005049C7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		4A872CB35228DBFFCAAD4ED7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5B783DD5F05E4B3C7CAB5004 /* Pods_RxCollectionExtensions_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCollectionExtensions_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACE51AFB9204008FA782 /* RxCollectionExtensions_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxCollectionExtensions_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7AEE62C87121B2140D7EA0A9 /* RxCollectionExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RxCollectionExtensions.podspec; path = ../RxCollectionExtensions.podspec; sourceTree = "<group>"; };
+		7AEE62C87121B2140D7EA0A9 /* RxCollectionExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxCollectionExtensions.podspec; path = ../RxCollectionExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A9EABBE8557DD4FD7937C96C /* Pods-RxCollectionExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCollectionExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RxCollectionExtensions_Tests/Pods-RxCollectionExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,10 +39,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CB08E9D25D66A9500E2F23E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CB2449825D571DC0069B7BD /* Rx+CollectionObservable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2CB2449625D571370069B7BD /* RxCollectionExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CB08E9D25D66A9500E2F23E /* Extensions */,
+			);
+			name = RxCollectionExtensions;
+			path = ../RxCollectionExtensions;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				2CD6EC9525D76849005049C7 /* .gitignore */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				2CB2449625D571370069B7BD /* RxCollectionExtensions */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				EF56255C660E33831A646B14 /* Pods */,
@@ -95,7 +118,6 @@
 				A9EABBE8557DD4FD7937C96C /* Pods-RxCollectionExtensions_Tests.debug.xcconfig */,
 				20036C11D4F00D71B2DB4D6F /* Pods-RxCollectionExtensions_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -131,10 +153,6 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
@@ -147,6 +165,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -165,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD6EC9625D76849005049C7 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB2449925D571DC0069B7BD /* Rx+CollectionObservable.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
