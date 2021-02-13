@@ -1,5 +1,5 @@
 use_frameworks!
-target 'RxCollectionExtensions_Tests' do
+target 'ExampleApp' do
   pod 'RxCollectionExtensions', :path => '../'
   
   

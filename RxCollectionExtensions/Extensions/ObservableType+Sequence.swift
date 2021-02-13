@@ -1,8 +1,8 @@
 //
-//  Rx+CollectionObservable.swift
-//  RxCollectionExtensions_Tests
+//  ObservableType+Sequence.swift
+//  ExampleApp
 //
-//  Created by 영준 이 on 2021/02/11.
+//  Created by 영준 이 on 2021/02/13.
 //  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
@@ -10,11 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public extension Observable where Element: Sequence{
+public extension ObservableType where Element: Sequence{
     typealias ElementType = Element.Iterator.Element;
-
     /**
-     support completion for binding obervable sequence to collectionView.rx.items
+     support completion for binding obervable sequence to tableView.rx.items
      
      - parameter cellIdentifier: Identifier used to dequeue cells.
      - parameter cellType: Type of table view cell.
@@ -40,22 +39,13 @@ public extension Observable where Element: Sequence{
     @discardableResult
     func bind<CollectionCell>(toCollectionView to: UICollectionView, cellIdentifier: String, cellType: CollectionCell.Type, disposeBag: DisposeBag? = nil
         , cellConfigurator:  @escaping (_ cellRow: Int, _ element: ElementType, CollectionCell) -> Void) -> DisposeBag where CollectionCell: UICollectionViewCell{ //, cellType: Cell.Type
-        let value = disposeBag ?? DisposeBag();
-        self.bind(to: to.rx.items(cellIdentifier: cellIdentifier, cellType: CollectionCell.self)){ (index, row, cell) in
-            cellConfigurator(index, row, cell);
-        }.disposed(by: value);
         
-        return value;
+        return self.asObservable().bind(toCollectionView: to, cellIdentifier: cellIdentifier, cellType: cellType, disposeBag: disposeBag, cellConfigurator: cellConfigurator)
     }
     
     @discardableResult
     //TableCell
     func bind<TableCell>(toTableView to: UITableView, cellIdentifier: String, cellType: TableCell.Type, disposeBag: DisposeBag? = nil, cellConfigurator:  @escaping (_ cellRow: Int, _ element: ElementType, TableCell) -> Void) -> DisposeBag where TableCell: UITableViewCell{ //, cellType: Cell.Type
-        let value = disposeBag ?? DisposeBag();
-        self.bind(to: to.rx.items(cellIdentifier: cellIdentifier, cellType: TableCell.self)){ (index, row, cell) in
-            cellConfigurator(index, row, cell);
-        }.disposed(by: value);
-        
-        return value;
+        return self.asObservable().bind(toTableView: to, cellIdentifier: cellIdentifier, cellType: cellType, disposeBag: disposeBag, cellConfigurator: cellConfigurator)
     }
 }
