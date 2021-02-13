@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxCollectionExtensions'
-  s.version          = '0.0.1'
+  s.version          = '1.0'
   s.swift_version    = '5'
   s.summary          = 'Extensions of Collection Observable for UITableView, UICollectionView'
 
