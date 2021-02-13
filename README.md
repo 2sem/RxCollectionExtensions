@@ -10,7 +10,7 @@
 RxCollectionExtensions is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-## Usage
+## Bind to TableView
 
 ```swift
 self.viewModel.items
@@ -19,6 +19,17 @@ self.viewModel.items
         cell.textLabel?.text = row.name;
     }
 ```
+
+## Bind to CollectionView
+
+```swift
+self.viewModel.items
+//            .asObservable()
+    .bind(toCollectionView: self.collectionView, cellIdentifier: Cells.default, cellType: CollectionViewCell.self, disposeBag: self.disposeBag) { (index, row, cell) in
+        cell.label?.text = row.name;
+    }
+```
+
 
 ## Example
 
