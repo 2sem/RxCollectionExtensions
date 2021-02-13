@@ -12,8 +12,12 @@ it, simply add the following line to your Podfile:
 
 ## Usage
 
-```
-
+```swift
+self.viewModel.items
+//            .asObservable()
+    .bind(toTableView: self.tableView, cellIdentifier: Cells.default, cellType: UITableViewCell.self, disposeBag: self.disposeBag) { (index, row, cell) in
+        cell.textLabel?.text = row.name;
+    }
 ```
 
 ## Example
